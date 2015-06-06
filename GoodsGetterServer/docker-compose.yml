@@ -1,0 +1,36 @@
+web1:
+  build: ./app-server
+  command: python app.py
+  ports:
+   - "5000"
+  volumes:
+   - ./app-server:/code
+  links:
+   - redismaster
+web2:
+  build: ./app-server
+  command: python app.py
+  ports:
+   - "5000"
+  volumes:
+   - ./app-server:/code
+  links:
+   - redismaster
+nginx:
+  build: ./nginx
+  links:
+    - web1:web1
+    - web2:web2
+  ports:
+    - "8080:8080"
+redismaster:
+  image: redis
+  ports:
+    - "6379"
+redisslave:
+  image: redis
+  command: redis-server --slaveof redismaster 6379
+  ports:
+   - "6379"
+  links:
+   - redismaster
