@@ -36,7 +36,7 @@ How-to:
 	* <a href='http://flask.pocoo.org/'>Flask</a>, use as API framework
 	* <a href='http://redis.io/'>Redis</a>, use simple data storage
 	* <a href='https://docs.docker.com/'>Docker</a> and <a href='https://docs.docker.com/compose/'>Docker Compose</a>, use to build environment
-	* NAT, use to port forwarding between mac and iPhone when using vagrant
+	* NAT, use to port forwarding between mac and iPhone when using VirtualBox
 	* <a href='http://nginx.org/en/docs/'>Nginx</a>, use as simple reverse proxy and load balance
 	* ...  
 * Client(iOS)
